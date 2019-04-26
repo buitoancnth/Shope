@@ -10,8 +10,8 @@ class PageController extends Controller
     public function getIndex()
     {
         $slides = Slide::all();
-        $new_products = Product::where('new', 1)->get();
-        $top_products = Product::where('new', 0)->get();
+        $new_products = Product::where('new', 1)->paginate(4);
+        $top_products = Product::where('promotion_price', '<>', 0)->paginate(8);
         // $top_products = Product::where()
         return view('page.home', compact('slides', 'new_products', 'top_products'));
     }
