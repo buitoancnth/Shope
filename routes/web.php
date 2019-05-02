@@ -16,8 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('index',['as'=>'trang-chu', 'uses' => 'PageController@getIndex']);
-Route::get('type-product',['as'=>'loai-san-pham', 'uses' => 'PageController@getTypeProduct']);
-Route::get('product-detail', ['as' =>' product-detail', 'uses' => 'PageController@getAllProduct']);
+Route::get('type-product/{id_type}',['as'=>'loai-san-pham', 'uses' => 'PageController@getTypeProduct']);
+Route::get('product-detail/{id_sp}', ['as' =>'product-detail', 'uses' => 'PageController@getDetailProduct']);
 Route::get('contacts', ['as' => 'contacts', 'uses' => 'PageController@getContacts']);
 Route::get('login', ['as' => 'login', 'uses' => 'PageController@login']);
 Route::get('pricing', ['as' => 'pricing', 'uses' => 'PageController@getPrice']);
+Route::get('gioi-thieu', [
+	'as'=>'gioi-thieu',
+	'uses'=>'PageController@getGioiThieu'
+]);

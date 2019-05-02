@@ -59,7 +59,7 @@
 										</div>
 										<div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="beta-btn primary" href="{{route('product-detail', $new_product->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
@@ -92,7 +92,7 @@
 											<p class="single-item-title">{{ $top_product->name }}</p>
 											<p class="single-item-price">
 												@if($top_product->promotion_price == 0)
-													<span class="flash-sale">{{ number_format($top_product->promotion_price) }}</span>
+													<span class="flash-sale">{{ number_format($top_product->unit_price) }}</span>
 												@else
 													<span class="flash-del">{{ number_format($top_product->unit_price) }}</span>
 													<span class="flash-sale">{{ number_format($top_product->promotion_price) }}</span>
@@ -101,7 +101,7 @@
 										</div>
 										<div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="beta-btn primary" href="{{route('product-detail', $top_product->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
