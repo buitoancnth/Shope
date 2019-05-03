@@ -1,5 +1,13 @@
 @extends('master')
 @section('content')
+@if(Session::has('flag'))
+	<div class="alert alert-{{Session::get('flag')}}" role="alert" style="margin-top: 10px; margin-right: auto; margin-left: auto; width: 300px;">
+		{{Session::get('massage')}}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+@endif
 <div class="fullwidthbanner-container">
 	<div class="fullwidthbanner">
 		<div class="bannercontainer" >
@@ -58,7 +66,7 @@
 											</p>
 										</div>
 										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+											<a class="add-to-cart pull-left" href="{{route('themgiohang', $new_product->id)}}"><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('product-detail', $new_product->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
@@ -100,7 +108,7 @@
 											</p>
 										</div>
 										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+											<a class="add-to-cart pull-left" href="{{route('themgiohang', $top_product->id)}}"><i class="fa fa-shopping-cart"></i></a>
 											<a class="beta-btn primary" href="{{route('product-detail', $top_product->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>

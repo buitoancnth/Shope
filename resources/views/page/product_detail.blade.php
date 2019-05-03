@@ -139,36 +139,17 @@
 				<div class="widget">
 					<h3 class="widget-title">Best Sellers</h3>
 					<div class="widget-body">
-						<div class="beta-sales beta-lists">
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
+						@foreach($best_sellers as $best_sell)
+							<div class="beta-sales beta-lists">
+								<div class="media beta-sales-item">
+									<a class="pull-left" href="product.html"><img src="source/image/product/{{$best_sell->image}}" alt="" height="55" width="58"></a>
+									<div class="media-body">
+										{{$best_sell->name}}
+										<span class="beta-sales-price">{{$best_sell->price}}</span>
+									</div>
 								</div>
 							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</div> <!-- best sellers widget -->
 				<div class="widget">
